@@ -1,10 +1,33 @@
-/* src/components/CreditCard.module.css */
+/* components/CreditCard.module.css */
 .card {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 200px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* 변경 */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* 카드가 위로 살짝 올라감 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+}
+
+.cardImage {
+  width: 100%; /* 카드 너비에 맞춰 이미지가 가로로 펼쳐짐 */
+  height: auto; /* 이미지의 비율을 유지하면서 자동으로 높이 조정 */
+  border-radius: 8px; /* 카드와 이미지의 일관된 디자인을 위해 */
+}
+
+.selected {
+  transform: translateX(-200px); /* 선택된 카드를 왼쪽으로 이동 */
+}
+
+.hidden {
+  display: none; /* 숨겨진 카드 */
 }

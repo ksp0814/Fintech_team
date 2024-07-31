@@ -1,11 +1,18 @@
-import styles from "./CreditCard.module.css"; // CSS 모듈을 올바르게 임포트
+// components/CreditCard.js
+import styles from "./CreditCard.module.css";
 
-export default function CreditCard({ card }) {
+export default function CreditCard({ card, onClick, isSelected }) {
+  const imageUrl = `/images/card${card.id}.png`;
+
   return (
-    <div className={styles.card}>
-      <h3>{card.name}</h3>
+    <div
+      className={`${styles.card} ${isSelected ? styles.selected : ""}`}
+      onClick={onClick}
+    >
+      <img src={imageUrl} className={styles.cardImage} />
+      {/* <h3>{card.name}</h3>
       <p>{card.number}</p>
-      <p>Expiry: {card.expiry}</p>
+      <p>Expiry: {card.expiry}</p> */}
     </div>
   );
 }
